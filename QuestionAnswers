@@ -35,4 +35,37 @@ you can define such connectors and then all mule applications will be using mule
 as on cloudhub it doesnt support mule domain project structure.
 
 #6 -Which connector does support transactions and what is difference between XA and non-XA transactions?
-Database, JMS, VM connector support transaction feature
+Database, JMS, VM connector support transaction feature. Two transaction types-
+a.Single Resource(local) - Normally used on single resource,faster and local transaction, should be used on same connector opertaions n use same global config, no nested transactions support
+b. Exentended Architecture(XA) - support nested transaction,two phase commit,slower but reliable in distributed systems.
+TransactionActions matter a lot in case of XA transactions 
+Always Begin - always start a new transaction- in XA it creates new transaction as a nested transaction. in single reosurce already existing transaction then it throws error
+Always JOin - joins an existing transaction, throws error if no existing transaction
+BeginOrJoin- it joins if existing else begin new transaction
+JoinIfpossible- join if exiting transaction but wil not create new tranasction
+InDfifferent -Do not treat actions as a transaction
+None - Do not initiate a transaction.
+Not_supported - Execute outside any existent transaction.
+
+#7 what are different type of variables and attributes and how is scope of those?
+in mule 4 we have variables and inbound/outbound attributes which are represented as attributes.
+Mule 4 has simpleied mule event model as below -
+----------------------
+|   Mule Event       |
+|   --------------   |
+|  | Mule Message |  |
+|  |   Attributes |  |
+|  |              |  |
+|  |   Payload    |  |
+|   --------------   |
+|                    |
+|    Variables       |
+|--------------------|
+Variables do propogate within flows when referenced using flow reference while they do not propogate over component automatically
+Attributes replaces inbound properties of Mule 3 message ,it provide easy access on source attributes as well as we can store them in variables easily #[attributes.queryParams.filter]
+Sessions,attachements and outbound properties are not supported in mule 4 now.
+
+
+
+
+
