@@ -21,5 +21,18 @@ After understandning requirement and scope, check existing design patterns and r
 present new design pattern to Architecture forum for approval. Handover design solution to offshore and follow up on intergration parties n team for any issues/concerns and feedback.
 Present new /existing design changes to architecture forum and deliver those as per timeline. Use best practicse and get it implemented in program.
 
-------------- Mule Specific Questions --------------
-#4 - 
+------------- Mule 4 Specific Questions --------------
+#4 - What are the various types of Exception Handling?
+Global Exception Handling - use case to use it across mutliple flows with common stratergy
+Catch Exception Handling - Try catch can be used acrosss specific flow or component to use it in transaction or specific use case
+Choice Exception Handling -
+Default Exception Handling
+Rollback Exception Handling
+
+#5 - What you mean by shared resource and how do you achieve it?
+Connector/connnector configuration can be made common across application under mule domain project which is called as shared resource. You need to have mule domain project under which
+you can define such connectors and then all mule applications will be using mule domain for shared resource. this is available only for customer hosted mule runtime application 
+as on cloudhub it doesnt support mule domain project structure.
+
+#6 -Which connector does support transactions and what is difference between XA and non-XA transactions?
+Database, JMS, VM connector support transaction feature
