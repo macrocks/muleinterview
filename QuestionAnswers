@@ -1,0 +1,25 @@
+
+#1 -  Introduce yourself and daily activities or project responsibilities
+This is generic question and it depends on you how do you represent yourself. E.g.
+Myself Amit, Completed graduation in computer science engineering in 2008. having an experience of 12 years in an IT industry. Been part of different domain,complex and industry 
+software development lifecycle. Current working with an Insurance client in a complex digital transformation program which is high demading,tight on schedule and with more complexity.
+Having an experience as a Developer,Team Leader,Integration Design Lead and Manager. Worked on Retail Banking,Insurance, Hospitapitality domain projects. blah blah blah ......
+Currently being as a Mulesoft INtegration Design lead, i need to take care of new business requirement understanding and designing solution which is reusable,adhere to existing design patterns,
+scalable. Handling a team at onshore and offshore with respect to design changes,code review,best practices implementation and delivery timeline.
+
+#2 - Which features of Mulesoft are being used in your program?
+We are using customer hosted runtime plane(mule version 3.9.2) while for metadata using anypoint platform hosted control plane which gives benefit to control business data into customer hosted environment,
+putting dedicated load balancer for custom domain ,certificate solution and on premise/cloud datacentre/db access. URL bases load balancer in NFT env to support scalability.
+Exchange for template,api discovery and api details on public portal for third part. Property file encryption using security configuration. Munit for unit testing. Anypoint studio for 
+mule application development.Log4j configuration for push logs into graylog/server. Almost(more than 10) all connectors are used for integration e.g. HTTP, WS,FTP, SMTP, Kafka, Mongodb,Salesforce, DB,JMS,VM
+All scopes are used in application sync, async, scatter gather, foreach, choice
+Note- Make sure whatever feature you will point out here,you should have clear crystal understanding on it and use case.
+
+#3 - what are resposibilities of Mulesoft Integration Design lead -
+My job as a design lead is to attend scope gathering sessions with business, understand current scope and if any future scope. All intergrations partners their integration patterns and use case.
+After understandning requirement and scope, check existing design patterns and reuse if any can be or come up with new soltion design which will adhere to existing established design patterns or 
+present new design pattern to Architecture forum for approval. Handover design solution to offshore and follow up on intergration parties n team for any issues/concerns and feedback.
+Present new /existing design changes to architecture forum and deliver those as per timeline. Use best practicse and get it implemented in program.
+
+------------- Mule Specific Questions --------------
+#4 - 
