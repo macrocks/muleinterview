@@ -65,9 +65,16 @@ Variables do propogate within flows when referenced using flow reference while t
 Attributes replaces inbound properties of Mule 3 message ,it provide easy access on source attributes as well as we can store them in variables easily #[attributes.queryParams.filter]
 Sessions,attachements and outbound properties are not supported in mule 4 now.
 
-#8 In which scenarios you will use scatter-gather , round robin and choice case scenarions? real time example from your project.
+#8 In which scenarios you will use scatter-gather and choice case scenarions? real time example from your project.
 Scatter-gather - > when u need to gather data from more than one system and they do no have any dependency as well as u need to achieve result within given timeline which is critical.
 We used scatter gather in case of multiple third party integration where those independent and important to collect data within a stipulated timeline.
+Choice case router is used normally to choose one route depeneding on condition e.g. send message to a flow when country is part of europe. it comes with default case which is
+mandatory. Ref Link- https://docs.mulesoft.com/mule-runtime/4.3/about-components
+
+#9 What are scenarios in which you will use cache scope and what are implementation ways?
+cache scope is used to store and retrieve frequently used data. We have used cache scope for data which is same for vehicle and coming fro third part.In this case we call thrid party if cache is missed
+and store it into cache for next calls as data doesn't get change over period. You can use object store to implement cache scope along with you can database,redis cache or java class  which implements custom cache scope.
+Ref Link- https://docs.mulesoft.com/mule-runtime/4.3/cache-scope
 
 
 
