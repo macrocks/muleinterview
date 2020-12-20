@@ -65,6 +65,9 @@ Variables do propogate within flows when referenced using flow reference while t
 Attributes replaces inbound properties of Mule 3 message ,it provide easy access on source attributes as well as we can store them in variables easily #[attributes.queryParams.filter]
 Sessions,attachements and outbound properties are not supported in mule 4 now.
 
+#8 In which scenarios you will use scatter-gather , round robin and choice case scenarions? real time example from your project.
+Scatter-gather - > when u need to gather data from more than one system and they do no have any dependency as well as u need to achieve result within given timeline which is critical.
+We used scatter gather in case of multiple third party integration where those independent and important to collect data within a stipulated timeline.
 
 
 
