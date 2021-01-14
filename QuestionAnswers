@@ -76,6 +76,18 @@ cache scope is used to store and retrieve frequently used data. We have used cac
 and store it into cache for next calls as data doesn't get change over period. You can use object store to implement cache scope along with you can database,redis cache or java class  which implements custom cache scope.
 Ref Link- https://docs.mulesoft.com/mule-runtime/4.3/cache-scope
 
+#10 what is difference between api autodiscovery vs api proxy and when to use what?
+API Proxy typical usage -  Either when you want to leverage API Gateway capabilities and your backend API is not based on Mule Runtime, 
+or when your API is based on Mule Runtime but you are unable to define the corresponding Autodiscovery element because it is a closed code.
+*you can manage non-mule applications using api manager for api proxy comes into picture
+Auto Discovery Usage- onfiguring autodiscovery allows a deployed Mule runtime engine (Mule) application to connect with API Manager to download and manage policies and to generate analytics data. 
+Additionally, with autodiscovery, you can configure your Mule applications to act as their own API proxy.
+Enhance capabilities of api manager e.g. security,analytics on runtime api.
+
+RefLink- https://docs.mulesoft.com/api-manager/2.x/api-proxy-landing-page
+https://docs.mulesoft.com/api-manager/2.x/api-auto-discovery-new-concept
+
+#11 -
 
 
 
