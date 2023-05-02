@@ -158,4 +158,30 @@ This single thread pool allows Mule to be efficient, requiring significantly few
 
 #13 : Difference between DLB vs DLB n exaplin DLB routing rules
 
+Shared Load Balancers
+CloudHub provides a default shared load balancer that is available in all environments. The shared load balancer provides basic functionality, such as TCP load balancing. Shared load balancers don’t allow you to configure custom SSL certificates or proxy rules.
 
+Additionally, shared load balancers have lower rate limits that help ensure platform stability. MuleSoft regularly monitors and scales these limits as necessary. Rate limits on shared load balancers are applied according to region. If you are deploying an application to workers in multiple regions, the rate limit for each region might be different.
+
+If an application exceeds the rate limit for a shared load balancer, the load balancer returns a 429 Service Unavailable response.
+
+To perform custom load balancer configuration or have higher rate limit thresholds, you must use a dedicated load balancer.
+
+The shared load balancer supports TLS versions 1.1 and TLS 1.2.
+
+Dedicated Load BalancersDedicated Load Balancers
+Dedicated load balancers enable you to:
+
+Handle load balancing among the different CloudHub workers that run your application.
+
+Define SSL configurations to provide custom certificates and optionally enforce two-way SSL client authentication.
+
+Configure proxy rules that map your applications to custom domains.
+
+This enables you to host your applications under a single domain.
+
+Enable HTTP Streaming via the API in CloudHub.
+
+#14: Options to connect your on-premise system with api deployed on cloudhub
+Option1- Anypoint VPN
+OPtion 2- AWS transit Gateway
