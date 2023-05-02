@@ -25,7 +25,7 @@ Present new /existing design changes to architecture forum and deliver those as 
 #4 - What are the various types of Exception Handling?
 Global Exception Handling - use case to use it across mutliple flows with common stratergy
 Catch Exception Handling - Try catch can be used acrosss specific flow or component to use it in transaction or specific use case
-Choice Exception Handling -
+Choice Exception Handling - 
 Default Exception Handling
 Rollback Exception Handling
 
@@ -87,7 +87,75 @@ Enhance capabilities of api manager e.g. security,analytics on runtime api.
 RefLink- https://docs.mulesoft.com/api-manager/2.x/api-proxy-landing-page
 https://docs.mulesoft.com/api-manager/2.x/api-auto-discovery-new-concept
 
-#11 -
+#11 - talk about Mule 4 Runtime improvement over Mule 3 runtime-
+Smart – self-tuning, high performance, leverages the complete advantages of non-blocking I/O.	Removes manual overhead and error-prone explicit runtime tuning configuration.No need to explicitly configure thread pool. Runtime does that for you, resulting in optimum performance.
 
+Simplified message model with payload and attributes.	Easy access to a message’s data and metadata.Simplified message model allows users to update messages making it easier to send and receive data across connectors.
+
+Improved error handling with on-error-continue and on-error-propagate.Simplified with built-in errors and predefined errors, specific to connector operations.New Try Scope to handle errors specific to processor.	Easy to handle errors.With on-error-continue and on-error-propagate used in Try Scope, we can decide whether to continue the process or break out.Improved readability of code with a meaningful name for error types (example : DB:QUERY_EXECUTION)
+
+Independent of runtime with the introduction of isolated class loading, completely operation oriented.	Connectors can be upgraded irrespective of the runtime.Completely operation oriented improves developer experience with consistency and predictability of operations across connectors.
+
+Dataweave 2.0 replaces both languages	Easier to learn.Completely function oriented.Powerful with more built-in functions grouped into modules, which can then be imported into other flows.Can package custom reusable functions into a custom module and use it across applications.
+
+Streaming concept is completely abstracted and automatically handled by runtime with the introduction of repeatable streams.	No explicit, error prone configurations.Very helpful when dealing with large payloads.
+
+Can be achieved by configuring target variable at the connector and component level	Easier to use.
+
+#12 - Talk about Mule 4 Changes -
+
+Mule Message
+The Mule Message structure has evolved to make it easier to work with properties and to provide more consistency across connectors.
+
+Expression language
+The Mule Expression Language has been replaced with the DataWeave language so that you work with data and learn Mule more easily.
+
+Connectors
+The approach to connectivity was unified in Mule 4. Mule 3 transports were replaced with new operation-oriented connectors that are easier to use, have better out-of-the-box defaults, and provide new advanced capabilities.
+
+Error Handling
+Easier and more powerful error handling with a new Try scope.
+
+DataWeave
+DataWeave includes minor changes to simplify the syntax and make it easier to learn.
+
+Studio 7
+Features a simplified palette, improved Maven integration, and many other usability improvements.
+
+Runtime engine
+The internal execution engine has been updated with a new self-tuning and non-blocking reactive engine. This allows for better performance and scalability out-of-the-box.
+https://docs.mulesoft.com/mule-runtime/4.4/intro-overview
+Mule runtime engine implements a reactive execution engine, tuned for nonblocking and asynchronous execution.
+Mule event processors indicate to Mule whether they are CPU-intensive, CPU-light, or I/O-intensive operations. These workload types help Mule tune for different workloads, so you don’t need to manage thread pools manually to achieve optimum performance. Instead, Mule introspects the available resources (such as memory and CPU cores) in the system to tune thread pools automatically.
+Execution Engine
+Mule runtime engine implements a reactive execution engine, tuned for nonblocking and asynchronous execution.
+To see more details about reactive programming, visit https://en.wikipedia.org/wiki/Reactive_programming.
+
+This task-oriented execution model enables you to take advantage of nonblocking I/O at high concurrency levels transparently, meaning you don’t need to account for threading or asynchronicity in your flows. Each operation inside a Mule flow is a task that provides metadata about its execution, and Mule makes tuning decisions based on that metadata.
+
+Mule event processors indicate to Mule whether they are CPU-intensive, CPU-light, or I/O-intensive operations. These workload types help Mule tune for different workloads, so you don’t need to manage thread pools manually to achieve optimum performance. Instead, Mule introspects the available resources (such as memory and CPU cores) in the system to tune thread pools automatically.
+
+Processing TypesProcessing Types
+Mule event processors indicate to Mule what kind of work they do, which can be one of:
+
+CPU-Light
+For quick operations (around 10 ms), or nonblocking I/O, for example, a Logger (logger) or HTTP Request operation (http:request). These tasks should not perform any blocking I/O activities. The applicable strings in the logs are CPU_LIGHT and CPU_LIGHT_ASYNC.
+
+Blocking I/O
+For I/O that blocks the calling thread, for example, a Database Select operation (db:select) or a SFTP read (sftp:read) . Applicable strings in the logs are BLOCKING and IO.
+
+CPU Intensive
+For CPU-bound computations, usually taking more than 10 ms to execute. These tasks should not perform any I/O activities. One example is the Transform Message component (ee:transform). The applicable string in the logs is CPU_INTENSIVE.
+
+See specific component or module documentation to learn the processing type it supports. If none is specified, the default type is CPU Light.
+
+For connectors created with the Mule SDK, the SDK determines the most appropriate processing type based on how the connector is implemented. For details on that mechanism, refer to the Mule SDK documentation.
+
+ThreadingThreading
+Starting in Mule 4.3, Mule contains one unique thread pool, called the UBER pool. This thread pool is managed by Mule and shared across all apps in the same Mule instance. At startup, Mule introspects the available resources (such as memory and CPU cores) in the system and tunes automatically for the environment where Mule is running. This algorithm was established through performance testing and found optimal values for most scenarios.
+
+This single thread pool allows Mule to be efficient, requiring significantly fewer threads (and their inherent memory footprint) to process a given workload when compared to Mule 3.
+
+#13 : Difference between DLB vs DLB n exaplin DLB routing rules
 
 
