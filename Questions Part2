@@ -1,0 +1,34 @@
+IHow do you make sure guaranteed message delivery??  do you make sure guaranteed message delivery?? 
+
+Do we have automatic options to move messages from dlq to active queue
+
+How do we achieve this? 
+
+How you implement pub sub pattern in mulesoft
+
+What is exchange n how to use it? How much is capacity of exchange
+
+In case of order is important then what do you do? 
+
+Can we use fifo with exchange if no then how do we make sure pub sub pattern implemented I  this case
+
+How to achieve maximum efficiency with fifo queue
+
+In case of multiple different type of messages in fifo queue how do you manage Max efficiency
+
+What will be naming convention for same platform
+
+Where do we keep secret to encrypt passcode Or password
+
+Shall we impelemnt business logic in integrarion layer
+
+What is cdm n how to implement this(common data modelling) 
+
+What are integrarion patterns we use to connect to salesforce
+
+What's is caching n when to use it
+
+Can we use caching policy n in which case we can use n how it works
+
+If your system api is becoming bulky due to no of endpoints n functionaliry in it, how do you handle it? Increase vcore, create new api, on which basis you will create new api, 
+Performance, vcore, downstream connectivity protocol, or random no of endpoints 
